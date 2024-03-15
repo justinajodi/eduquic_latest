@@ -1,0 +1,84 @@
+Course {
+	id varchar pk increments unique
+	userId varchar
+	title varchar
+	description varchar
+	imageUrl varchar
+	price float
+	isPublished boolean
+	categoryId varchar
+	category varchar > Category.id
+	chapters enum
+	attachments enum
+	purchases enum
+	createdAt datetime
+	createdAt datetime
+}
+
+Category {
+	id varchar pk increments unique
+	name varchar
+	courses enum
+}
+
+Attachment {
+	id varchar pk increments unique
+	name varchar
+	url varchar
+	courseId varchar
+	course varchar > Course.id
+	createdAt datetime
+	updatedAt datetime
+}
+
+Chapter {
+	id integer pk increments unique
+	title varchar
+	description varchar
+	videoUrl varchar
+	position int
+	isPublished boolean def(false)
+	isFree boolean def(false)
+	muxData varchar
+	courseId varchar
+	course varchar > Course.id
+	userProgress enum
+	createdAt datetime
+	updatedAt datetime
+}
+
+MuxData {
+	id varchar
+	assetId varchar
+	playbackId varchar
+	chapterId varchar
+	chapter varchar > Chapter.id
+}
+
+UserProgress {
+	id varchar pk increments unique
+	userId varchar
+	chapterId varchar
+	chapter varchar > Chapter.id
+	isCompleted boolean
+	createdAt datetime
+	updatedAt datetime
+}
+
+Purchase {
+	id varchar pk increments unique
+	userId varchar
+	chapterId varchar
+	course varchar > Chapter.id
+	createdAt datetime
+	updatedAt datetime
+}
+
+StripeCustomer {
+	id varchar pk increments unique
+	userId varchar
+	stripeCustomerId varchar
+	createdAt datetime
+	updatedAt datetime
+}
+
