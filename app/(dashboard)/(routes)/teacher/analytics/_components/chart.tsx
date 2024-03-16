@@ -40,7 +40,7 @@ export const Chart = ({
           />
           <Bar
             dataKey="total"
-            fill="#be123c"
+            fill="#e11d48"
             radius={[4, 4, 0, 0]}
           />
         </BarChart>

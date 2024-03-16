@@ -14,8 +14,8 @@ export default function Quiz() {
       <div className="p-10 my-10   justify-center items-center rounded-lg shadow-xl w-[65%]">
         <InputBox />
         <DropdownOptions />
-        <Link  href={`/quiz/quizy`}>
-          <Button  size="lg" className="w-full">start</Button>
+        <Link  href={`/quiz/quizy`} className="flex items-center justify-center">
+          <Button  size="lg" className="">start</Button>
         </Link>
       </div>
     </div>

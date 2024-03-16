@@ -7,6 +7,7 @@ const nextConfig = {
       { protocol: "https", hostname: "i.pinimg.com", pathname: "**" },
       { protocol: "https", hostname: "utfs.io", pathname: "**" },
       { protocol: "https", hostname: "files.edgestore.dev", pathname: "**" },
+      { protocol: "https", hostname: "aceternity.com", pathname: "**" },
     ],
   },
   trailingSlash: false,

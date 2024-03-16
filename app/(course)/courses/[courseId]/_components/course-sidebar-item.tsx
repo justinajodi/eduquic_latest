@@ -35,7 +35,7 @@ export const CourseSidebarItem = ({
       onClick={onClick}
       type="button"
       className={cn(
-        "flex items-center gap-x-2 text-zinc-500 text-sm font-[500] pl-6 transition-all hover:text-zinc-600 hover:bg-zinc-300/20",
+        "flex items-center gap-x-2 text-zinc-500 dark:text-zinc-100 text-sm font-[500] pl-6 transition-all hover:text-zinc-600 hover:bg-zinc-300/20",
         isActive && "text-zinc-700 bg-zinc-200/20 hover:bg-zinc-200/20 hover:text-zinc-700",
         isCompleted && "text-emerald-700 hover:text-emerald-700",
         isCompleted && isActive && "bg-emerald-200/20",
@@ -45,8 +45,8 @@ export const CourseSidebarItem = ({
         <Icon
           size={22}
           className={cn(
-            "text-zinc-500",
-            isActive && "text-zinc-700",
+            "text-zinc-500 dark:text-zinc-100",
+            isActive && "text-zinc-700 dark:text-zinc-100",
             isCompleted && "text-emerald-700"
           )}
         />

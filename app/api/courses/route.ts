@@ -10,12 +10,13 @@ export async function POST(
   try {
     const { userId } = auth();
     const { title } = await req.json();
-
-    if (!userId || !isTeacher(userId)) {
+    if (!userId 
+      || !isTeacher(userId)
+      ) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const course = await db.course.create({
+    const course = await db.course.create({ 
       data: {
         userId,
         title,

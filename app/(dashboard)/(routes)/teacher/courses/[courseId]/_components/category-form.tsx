@@ -25,8 +25,8 @@ import { Combobox } from "@/components/ui/combobox";
 interface CategoryFormProps {
   initialData: Course;
   courseId: string;
-  options: { label: string; value: string }[];
-}
+  options: { label: string; value: string; }[];
+};
 
 const formSchema = z.object({
   categoryId: z.string().min(1),
@@ -46,7 +46,7 @@ export const CategoryForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      categoryId: initialData?.categoryId || "",
+      categoryId: initialData?.categoryId || ""
     },
   });
 
@@ -61,11 +61,9 @@ export const CategoryForm = ({
     } catch {
       toast.error("Something went wrong");
     }
-  };
+  }
 
-  const selectedOption = options.find(
-    (option) => option.value === initialData.categoryId
-  );
+  const selectedOption = options.find((option) => option.value === initialData.categoryId);
 
   return (
     <div className="mt-6 border  rounded-md p-4">
@@ -76,19 +74,17 @@ export const CategoryForm = ({
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-         
+              <Pencil className="" /> Edit
+              
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        <p
-          className={cn(
-            "text-sm mt-2",
-            !initialData.categoryId && "text-zinc-500 italic"
-          )}
-        >
+        <p className={cn(
+          "text-sm mt-2",
+          !initialData.categoryId && "text-slate-500 italic"
+        )}>
           {selectedOption?.label || "No category"}
         </p>
       )}
@@ -104,15 +100,12 @@ export const CategoryForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    {/* <Combobox
-                      options={...options}
-                      {...field}
-                    /> */}
-                    <Combobox
+                  <Combobox
                       options={options}
-                      onChange={(selectedValue) => {
-                        form.setValue("categoryId", selectedValue);
-                      }}
+                      {...field}
+                      // onChange={(selectedValue) => {
+                      //   form.setValue("categoryId", selectedValue);
+                      // }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -120,7 +113,10 @@ export const CategoryForm = ({
               )}
             />
             <div className="flex items-center gap-x-2">
-              <Button disabled={!isValid || isSubmitting} type="submit">
+              <Button
+                disabled={!isValid || isSubmitting}
+                type="submit"
+              >
                 Save
               </Button>
             </div>
@@ -128,5 +124,5 @@ export const CategoryForm = ({
         </Form>
       )}
     </div>
-  );
-};
+  )
+}

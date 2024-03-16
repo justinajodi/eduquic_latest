@@ -104,7 +104,7 @@ export const LandingHero = () => {
     <section
     ref={ref}
     id="home"
-className="mb-20 pt-10"
+className="mb-20 pt-40"
   >  
     <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
@@ -113,7 +113,7 @@ className="mb-20 pt-10"
         className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
       >
        <div className="text-black font-bold py-10 text-center space-y-5">
-      <div className="text-6xl font-black dark:text-zinc-50 sm:text-5xl md:text-6xl lg:text-7xl space-y-5 ">
+      <div className="text-6xl font-black dark:text-zinc-50 sm:text-4xl md:text-6xl lg:text-7xl space-y-5 ">
 
 
         <h1 >Learn 10X faster. </h1>
@@ -171,7 +171,7 @@ className="mb-20 pt-10"
         </Link> */}
         </Link>
       </div>
-      <div className=" text-xs md:text-sm font-normal dark:text-zinc-50 ">
+      <div className=" text-xs md:text-sm font-normal dark:text-zinc-100/70 ">
         No credit card required.
       </div>
    

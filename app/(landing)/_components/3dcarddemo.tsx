@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import { PinContainer } from "@/components/ui/3d-pin";
-import SectionHeading from "@/components/section-heading";
-import Image from "next/image";
+
 
 export function AnimatedPinDemo() {
   return (
 
    <div>
-  <h2 className="text-3xl font-medium capitalize mb-8 text-center">
+  <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white mb-10">
      Most Popular Tools
     </h2>
     <div className="h-[40rem] w-full flex items-center justify-center ">

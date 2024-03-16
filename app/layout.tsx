@@ -1,5 +1,5 @@
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
-import { Toaster } from "sonner";
+
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -11,7 +11,8 @@ import { EdgeStoreProvider } from "@/lib/edgestore";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeContextProvider from "@/context/theme-context";
+
+import { ToastProvider } from "@/components/providers/toaster-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,7 +46,7 @@ export default function RootLayout({
         <ClerkProvider>
           <ConvexClientProvider>
             <EdgeStoreProvider>
-              <Toaster position="bottom-center" />
+            <ToastProvider />
               <ModalProvider />
               <ConfettiProvider />
               <ThemeProvider
@@ -54,11 +55,11 @@ export default function RootLayout({
                 enableSystem
                 disableTransitionOnChange
               >
-                <ThemeContextProvider>
+              
                   <ActiveSectionContextProvider>
                     {children}
                   </ActiveSectionContextProvider>
-                </ThemeContextProvider>
+               
               </ThemeProvider>
             </EdgeStoreProvider>
           </ConvexClientProvider>

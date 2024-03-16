@@ -14,12 +14,13 @@ import {
 
 
 import { Heading } from "@/components/heading";
-import { ModeToggle } from "./_components/mode-toggle";
+
 import { redirect } from "next/navigation";
 import { CalendarDemo } from "./_components/calendar";
 import { SubscriptionButton } from "@/components/subscription-button";
 import { auth } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default async function Dashboard() {
   const { userId } = auth();

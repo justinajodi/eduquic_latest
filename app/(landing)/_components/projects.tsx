@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "../../../components/section-heading";
+import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
-import { AnimatedPinDemo } from "./3dcarddemo";
-import { ThreeDCardDemo } from "./3dcardmotion";
 
 export default function Projects() {
   const { ref } = useSectionInView("Modules", 0.5);
@@ -21,7 +19,6 @@ export default function Projects() {
           </React.Fragment>
         ))}
       </div>
-    
     </section>
   );
 }
